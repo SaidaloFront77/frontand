@@ -10,7 +10,7 @@ function App() {
   // Fetch users
   const fetchUsers = async () => {
     try {
-      const res = await fetch("http://localhost:5000/users");
+      const res = await fetch("https://bacend-lq0n.onrender.com/users");
       if (!res.ok) throw new Error("Failed to fetch users");
       const data = await res.json();
       setUsers(data);
@@ -26,7 +26,7 @@ function App() {
   // Add user
   const addUser = async ({ name, email }) => {
     try {
-      const res = await fetch("http://localhost:5000/users", {
+      const res = await fetch("https://bacend-lq0n.onrender.com/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email }),
@@ -46,7 +46,7 @@ function App() {
   // Update user
   const updateUser = async (id, { name, email }) => {
     try {
-      const res = await fetch(`http://localhost:5000/users/${id}`, {
+      const res = await fetch(`https://bacend-lq0n.onrender.com/users/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email }),
@@ -68,7 +68,7 @@ function App() {
   const handleDelete = async (id) => {
     if (!window.confirm("Haqiqatan ham o‘chirmoqchimisiz?")) return;
     try {
-      const res = await fetch(`http://localhost:5000/users/${id}`, {
+      const res = await fetch(`https://bacend-lq0n.onrender.com/users/${id}`, {
         method: "DELETE",
       });
       if (!res.ok) {
