@@ -22,7 +22,7 @@ export default function UserList({ users, onEdit, onDelete }) {
             <td>{email}</td>
             <td>
               <button onClick={() => onEdit({ id, name, email })}>Tahrirlash</button>
-              {/* <button onClick={() => onDelete(id)} className="delete-btn">O'chirish</button> */}
+              <button onClick={() => onDelete(id)} className="delete-btn">O'chirish</button>
             </td>
           </tr>
         ))}
